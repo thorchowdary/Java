@@ -1,0 +1,99 @@
+Oops, concepts:
+--------------
+1. polymorphism
+2. encapsulation
+3. inheritance
+4. abstraction
+
+1. polymorphism:
+----------------
+poly --many
+morphism -- forms
+
+polymorphism is a Greek word whose meaning is "same object having different forms"
+
+example:
+--------
+    one person can be a student, teacher, friend, or customer.
+
+polymorphism can be achieved in two ways
+1. runtime polymorphism (method overriding)
+2. compile time polymorphism (method overloading)
+
+1. runtime:
+------------
+class a{
+  void show(){  -->show() method exists here, we can override in the child class
+  system.out.println("hello);  
+  }
+}
+
+class b extends a{
+
+we are overriding the method in the superclass.
+to override the method their should be a method in the superclass without having a method in the super class if we try to override it will give an error
+to call superclass method output we use the super keyword
+
+super.show();
+@override
+void show(){
+sysout("hi")
+}
+}
+
+2.compiletime(method overloading)
+----------------------------------
+the same method in different forms, they get differentiated with the parameters passed to that method
+
+void show(int a){
+sysout("a");
+}
+void show(int a,int b){
+sysout("ab");
+}
+void show(int a,int b, int c){
+sysout("abc");
+}
+
+when we call
+show(1);
+show(1,2);
+show(1,2,3);
+
+this is called method overloading
+
+
+
+2. encapsulation:
+--------------------
+wrapping out data members and member methods in a single class is called encapsulation.
+
+note:
+----
+1. declare class members as private
+2. methods as public
+
+* encapsulation also does data hiding(by making class members private) and abstraction.
+
+
+class a {
+private int a; --- data hiding // we cannot access the private variables outside only class methods can access them, if we try to assign a value to it from outside it will 
+                                  throw an error, that is the reason we are setting the a value with the x argument.
+void setValue(int x){ ---->absraction is happing by hiding the unwanted information from the user, also we are setting value a by passing an argument x.
+ a =  x ;
+}
+void getValue(){
+sysout(value);
+}
+public static void main(String args[]){
+bag a = new a();
+a.setvalue(10);
+sysout(a.getvalue);
+
+}
+}
+
+
+
+
+
