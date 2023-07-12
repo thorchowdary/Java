@@ -31,8 +31,8 @@ class a{
 class b extends a{
 
 we are overriding the method in the superclass.
-to override the method their should be a method in the superclass without having a method in the super class if we try to override it will give an error
-to call superclass method output we use the super keyword
+to override the method there should be a method in the superclass without having a method in the superclass if we try to override it will give an error
+to call the superclass method output we use the super keyword
 
 super.show();
 @override
@@ -93,7 +93,107 @@ sysout(a.getvalue);
 }
 }
 
+3. inheritance:
+------------------
+when we construct a new class from an existing class in such a way that the new class access all the features and properties of an existing class.
+    -> in java we use extends keyword to perform inheritance
+    -> It provides code re-usability
+    -> We can't access private members of the class through inheritance.
+    -> Method overriding is only possible through inheritance.
+
+syntax:
+-------
+
+class a{ //super class
+------
+}
+class b extends a{ //sub class
+
+}
+
+types of inheritance:
+-----------------------
+1. single/simple inheritance:
+ ------------------------------
+simple inheritance is that contains only one superclass and one subclass.
+superclass
+ |
+ |
+subclass
+
+2. multi-level inheritance:
+--------------------------
+in multi-level inheritance, we have only one superclass and multiple subclasses.
+superclass
+    |
+subclass 1
+    |
+subclass 2
+    |
+subclass 3 and so on.......
+
+syntax:
+------
+class a { //superclass
+
+}
+class b extends a{ //subclass1
+
+}
+class c extends b{ //subclass2
+
+}
+
+3. multiple inheritance
+------------------------
+java does not support multiple inheritances
+whenever a subclass wants to inherit the property of two or more superclasses that have the same method the Java compiler can't decide which class methods should inherit.
+then there will be a chance of memory duplication i.e. reason java does not support multiple inheritance.
+
+super class1            super class2
+      |                      |
+      ------>subclass<-------
+
+syntax:
+--------
+class a { //superclass
+    void m1(){
+    }
+}
+
+class b { //superclass
+    void m1{
+    }
+}
+
+class c extends a,b{ //subclass
+  c in confusion
+}
+
+suppose superclass1 and superclass2 have the same service when the subclass extends with both the classes will get an ambiguity as to which service to use, so java
+does not support multiple inheritance.
+
+with the help of interfaces, we can achieve multiple inheritance.
+
+4. hierarchical inheritance:
+-----------------------------
+an inheritance that contains only one superclass and multiple subclasses, and all subclassed are directly extended from the superclass.
 
 
+    ----- superclass -------
+    |        |             |
+subclass1   subclass2    subclass3
 
+syntax:
+--------
+class a{ //superclass
 
+}
+
+class b extends a{ //subclass1
+
+}
+
+class c extends a{ //subclass2
+
+}
