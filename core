@@ -1,0 +1,35 @@
+super keyword:
+----------------
+super keyword refers to the objects of super class. it is used when we want to call the super class variable, methods, constructor through subclass object.
+  -> whenever the superclass and subclass variable and method name both are same then only it can be used.
+  -> to avoid confusion between super class and subclass variables and methods that have same name we should use "super" keyword
+
+                               ---------------------super----------------
+                              |                      |                   |
+                              varibale            methods              constructor
+
+syntax:
+--------
+class a{
+  int a =10;
+  a(int a){
+
+   }
+  void disp(){
+    sysout("hello");
+  }
+}
+
+class b extends a{
+  int a = 30;
+  void show(){
+    super(100); //super class constructor
+    sysout(super.a); //super class variable
+    sysout(a);  
+    sysout(super.disp()); //calling super class method
+  }
+}
+
+
+this keyword:
+-------------
