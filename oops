@@ -365,4 +365,26 @@ public static void main(String[] args){
 }
 }
 
+--> we can extend the interfaces
+interface a {
+    void bag();
+}
+interface b extends a{
+    void shoe();
+}
+class c implements b{
+    @Override
+    public void bag(){ // we should define method "public" by default it is "default"  in interface the methods are public so if we won't mention is will be miss match so we define public
+        System.out.println("hey bag");
+    }
+    @Override
+    public void shoe(){
+        System.out.println("hey shoe");
+    }
+    public static void main(String[] args){
+        c obj = new c();
+        obj.bag();
+        obj.shoe();
+    }
+}
 
