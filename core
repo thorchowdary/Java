@@ -52,6 +52,40 @@ class b extends a{
   }
 }
 
+static method:
+--------------
+if we declare methods as static we no need to initilize the objects, we can directly access it.
+example:
+--------
+class a{
+    public static void show(){
+        System.out.println("hello");
+    }
+
+    public static void main(String[] arsg){ // since the main method have static we can execute directly
+        a.show();
+    } 
+}
+
+not static method:
+------------------
+class a{
+    public void show(){
+        System.out.println("hello");
+    }
+
+    public static void main(String[] arsg){ 
+        a obj = new a();
+        obj.show();
+    } 
+}
+
+------------------------------------------------------------------
+    access modifier  
+---> public static void main(String[] args)
+                   return type
+this can be in any format not like the way above is , we can use it like as static public void main(String[] args).
+------------------------------------------------------------------
 
 this keyword:
 -------------
