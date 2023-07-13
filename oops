@@ -91,7 +91,24 @@ class a{
 
 example:
 --------
-
+class a {
+    int a = 10;
+    String name = "tharun";
+    a(){
+        System.out.println(a+""+name);
+    }
+    a( a ref){  //passing object reference to the constructor
+        a = ref.a;
+        name = ref.name;
+        System.out.println(a+""+name);
+    }
+}
+class b{
+    public static void main(String[] args){
+        a obj = new a();
+        a obj2 = new a(obj); // passing object reference to the constructor
+    }
+}
 
 
 Oops, concepts:
