@@ -1,3 +1,99 @@
+constructor:
+------------
+constructor is a special type of method whose name is same as class name.
+-> the main purpose of constructor is to intiliaze the objects.
+-> every java class has the constructor(default constructor).
+-> constructor is automatically called at the time one object creation.
+-> constructor does not contiain any return type including void
+
+syntax:
+-------
+class class_name{
+    class_name(){
+
+    }
+}
+
+types of constructor:
+--------------------
+1. private
+2. default
+3. parameterized
+4. copy
+
+default constructor:
+--------------------
+a constructor does not have any parameters is called default constructor.
+example:
+-------
+class a{
+    int a = 0;
+    String name;
+    a(){
+        a = 0;             // this is default constructor if we don't declare it the compiler will declare when we compile the code.
+        name = null;
+    }
+    void show(){
+        System.out.println(a+""+name);
+    }
+}
+class b {
+    public static void main(String[] args){
+    a obj = new a();
+    obj.show();
+
+    }
+}
+
+parameterized constructor:
+--------------------------
+a construcor through which we can pass one or more parameters is called parameterized constructor.
+
+syntax:
+------
+class a{
+    a(int a, String name){
+
+    }
+}
+
+example:
+--------
+class a{
+    int x ;
+    int y ;
+    a(int a, int b){
+        x = a;
+        y = b;
+    }
+    void show(){
+        System.out.println(x+" "+y); 
+    }
+}
+class b{
+    public static void main(String[] args){
+        a obj = new a(1,2);
+        obj.show();
+    }
+}
+
+copy constructor:
+------------------
+whenever we pass object reference to the constructor then it is called copy constructor.
+
+syntax:
+--------
+class a{
+    a(obj ref){
+
+    }
+}
+
+example:
+--------
+
+
+
 Oops, concepts:
 --------------
 1. polymorphism
@@ -232,6 +328,7 @@ abstract class a{
 -> To use an abstract class we need to inherit from the subclass.
 -> If a class contains partial implementation then we should declare a class as abstract.
 -> When the method is abstract method then the class should be an abstract class.
+-> abstract class allow to delcare constructor
 
 syntax:
 -------
@@ -287,6 +384,7 @@ the interface is just a class that contains only an abstract method.
 -> interface variables are by default public + static + final.
 -> Interface methods should be overridden inside the implementation class.
 -> Whatever methods we do declare in the interface we need to implement in the subclasses otherwise will get an error.
+-> interface does not allow to declare constructor.
 syntax:
 -------
 
