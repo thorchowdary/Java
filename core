@@ -1,12 +1,34 @@
+how java code executed:
+-----------------------
+JDK(Java development tool kit) -- it contains JRE(Java run time environment)[it contains JVM(java run time environment)]
+javac fileName.java -- to compile java code
+when we compile java code we get a byte code (fileName.class)
+
+java code ---- javac fileName.java ---- gets the byte code(it is platform independent we can run it on any where, where we have JRE) --- .class
+
+bytecode(*.class) --- JVM ----native code(mac, windows...)
+we can run Java anywhere so Java is  platform-independent, JVM takes the byte code and converts it to native code to run in their OS(different os)
+so this is the reason why Java is "platform independent", "portable"
+
+Java was developed by James Gosling in 1995 and later acquired by Oracle in 2010.
+
+Java features:
+---------------
+1. platform independent
+2. portable
+3. secure
+4. Java is compiled and interpreted language
+5. robust
+
 super keyword:
 ----------------
-super keyword refers to the objects of super class. it is used when we want to call the super class variable, methods, constructor through subclass object.
-  -> whenever the superclass and subclass variable and method name both are same then only it can be used.
-  -> to avoid confusion between super class and subclass variables and methods that have same name we should use "super" keyword
+super keyword refers to the objects of the superclass. it is used when we want to call the superclass variable, methods, and constructor through a subclass object.
+  -> Whenever the superclass and subclass variable and method name both are the same then only it can be used.
+  -> To avoid confusion between superclass and subclass variables and methods that have the same name we should use the "super" keyword
 
                                ---------------------super----------------
                               |                      |                   |
-                              varibale            methods              constructor
+                              variable            methods              constructor
 
 syntax:
 --------
