@@ -366,7 +366,7 @@ public static void main(String[] args){
 }
 }
 
---> we can extend the interfaces
+--> we can extend the interfaces between interfaces
 example:
 ---------
 interface a {
