@@ -110,6 +110,31 @@ class b{
     }
 }
 
+private constructor:
+--------------------
+in java it is possible to write a constrcutor as a private but according to rule we cannot access private members outside the class.
+A private constructor in Java is used in restricting object creation. It is a special instance constructor used in static member-only classes. 
+If a constructor is declared as private, then its objects are only accessible from within the declared class. You cannot access its objects from outside the constructor class.
+
+syntax:
+-------
+class a{
+    private a(){
+
+    }
+}
+
+example:
+--------
+class a{
+    int a =10;
+    private a(){
+         System.out.println(a);
+    }
+    public static void main(String[] args){
+        a obj = new a();
+    }  
+}
 
 Oops, concepts:
 --------------
