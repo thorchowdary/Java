@@ -343,6 +343,26 @@ we can achieve multiple inheritace through interfaces because interface contains
 interface a      interface b
      |              |
      ----class c----
+----> class c implements a,b
+example:
+--------
+interface animal{
+    void eat(); // public + abstract
+}
+interface animal1{
+    void eat(); // public + abstract
+}
+
+class dog implements animal,animal1{
+    @Override
+    public void eat(){
+        System.out.println("eating");
+    }
+
+public static void main(String[] args){
+    dog a = new dog();
+    a.eat();
+}
+}
 
 
-class c implements a,b
