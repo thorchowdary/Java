@@ -344,6 +344,7 @@ interface a      interface b
      |              |
      ----class c----
 ----> class c implements a,b
+
 example:
 --------
 interface animal{
@@ -366,6 +367,8 @@ public static void main(String[] args){
 }
 
 --> we can extend the interfaces
+example:
+---------
 interface a {
     void bag();
 }
@@ -385,6 +388,54 @@ class c implements b{
         c obj = new c();
         obj.bag();
         obj.shoe();
+    }
+}
+
+-> from JDK 1.8  onwords interface can have default and static methods
+before JDK 1.8 interface can only have abstract methods and all the abstract methods need to be overridden in implementing class as well methods are public and abstract by default.
+with this after implementing at inferface code after few year if any new method come then it has to be oeridden in all the class which are consuming that interface, so after JDK 1.8
+onwords we can have default methods and static methods.
+
+--> if the method is default in the interface (no need of overriding by implicating all the classdes which are consuming that interface).
+
+default method in interface:
+----------------------------
+
+Example:
+--------
+interface a{
+    void show();
+    default void help(){
+        System.out.println("amy or may not overrdden by implementation in classed");  // default methods we must and should need to declare and implement 
+    }
+}
+class b implements a{
+    @Override
+    public void show(){
+        System.out.println("show"); // here we did not use the default class 
+    }
+public static void main(String[] args){
+    b obj = new b();
+    obj.show();
+}
+}
+
+static method in interface:
+----------------------------
+-> if we declare and implement static methods in interface we can direclty call it.
+-> we cannot override interface static methods.
+-> we can even declalre the main method in interface since it is static method
+
+
+example:
+--------interface a{
+    public static void show(){
+        System.out.println("hello");
+    }
+}
+class b implements a{
+    public static void main(String[] args){
+    a.show();
     }
 }
 
