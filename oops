@@ -197,3 +197,152 @@ class b extends a{ //subclass1
 class c extends a{ //subclass2
 
 }
+
+4. abstraction:
+---------------
+abstraction is the process of hiding the implementation details from the user, only highlighting a set of services provided to the user.
+
+example:
+--------
+
+    calculator app( it has add() ,sub() ,mul() ,div() features)-----user just uses the service we don't display the code and logic and which language to the user 
+
+advantages :
+----------
+1. security -- by hiding the core logic and displaying necessary services to the user.
+2. enhancement -- we can enhance the code written or also we can change from one language to another language.
+
+abstraction can be implemented in two ways:
+---------------------------------------------
+1. Abstraction
+2. Interface
+
+1. abstract class:
+------------------
+a class that contains the abstract keyword in its declaration is called an abstract class.
+syntax:
+-------
+abstract class a{
+
+}
+
+-> We can't create objects from the abstract class.
+-> It can have abstract and non-abstract methods.
+-> It may or may not have abstract methods.
+-> To use an abstract class we need to inherit from the subclass.
+-> If a class contains partial implementation then we should declare a class as abstract.
+-> When the method is abstract method then the class should be an abstract class.
+
+syntax:
+-------
+case 1:
+-------
+abstract class a{
+    abstract void m1();{ // here method is abstract then the class should be abstract.
+
+    }
+}
+
+case 2:
+-------
+abstract class a{
+    public void m1(); //this is a partial implementation we just declared the method but we didn't do any implementation.
+}
+
+example:
+---------
+
+abstract class animal{
+    animal(){
+        sysout("all animals"); // constructor
+    }
+    abstract void sound(); // here we just declaring the method not doing implementation because different animal makes different sound so, this is partial implementation,
+}
+
+class dog extends animal{
+    dog(){
+        super(); //calling abstract method constructor
+    }
+    public void sound(){
+        sysout("baw");
+    }
+
+}
+
+class cat extends animal{
+    cat(){
+        super(); 
+    }
+     public void sound(){
+            sysout("meowww");
+    }
+}
+
+
+interface:
+-----------
+the interface is just a class that contains only an abstract method.
+-> To achieve an interface java provides a keyword called "implements".
+-> interface methods are by default public and abstract.
+-> interface variables are by default public + static + final.
+-> Interface methods should be overridden inside the implementation class.
+-> Whatever methods we do declare in the interface we need to implement in the subclasses otherwise will get an error.
+syntax:
+-------
+
+interface client{
+    int amt = 5; // public + static + final;
+    void input();
+    void output(); // by default methods are abstract + public
+}
+class a implements client{
+    @override
+    public void input(){
+        amt = 5// you cannot assign a value to the amt variable since it is final(fixed);
+        sysout("hello" + amt);
+        client.amt; // since static variables no need initializing objects and access from it since we cannot initialize an object to interfaces we need to implement it.
+    }
+    @override
+    public void output(){
+        sysout("hi"+amt);
+    }
+}
+-> Whatever methods we do declare in the interface we need to implement in the subclasses otherwise will get an error.
+
+interface animal{
+    void eat(); // public + abstract
+    void sound(); // public + abstract
+}
+
+abstract class dog implements animal{
+    @override
+    public void eat(){
+        sysout("chicken");    // here in this abstract class we are not using both the methods which are in interface will get an error so we can use them by extending in another class.
+    }
+}
+
+class cat extends dog{
+    @override
+    public void sleep(){
+        sysout("sleeppppp"); // here we used another method in interface.
+    }
+}
+
+public static void main(String args[]){
+cat a = new cat(); // we can use of both the methods by initializing the single object
+a.eat();
+a.sleep();
+}
+
+
+multiple inheritance can be achieved by interface:
+--------------------------------------------------
+we can achieve multiple inheritace through interfaces because interface contains only abstract method, which implementation is provided by the sub class.
+
+ method1           method2 
+interface a      interface b
+     |              |
+     ----class c----
+
+
+class c implements a,b
