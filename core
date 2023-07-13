@@ -68,7 +68,7 @@ class a{
     } 
 }
 
-not static method:
+not static method(instance method):
 ------------------
 class a{
     public void show(){
