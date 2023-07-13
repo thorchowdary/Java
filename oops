@@ -439,3 +439,21 @@ class b implements a{
     }
 }
 
+from java 1.9 onwards we can declare private method in interface we call it via static or default method in interface, since we cannot access it from outside.
+
+example:
+interface a{
+    default void call(){
+        show();
+    }
+    private void show()
+    {
+        System.out.println("hello");
+    }
+}
+class c {
+     public static void main(String args[]){
+        a.call();
+    }
+}
+
