@@ -134,17 +134,114 @@ to compile the user-defined package class we use ---  "javac -d . className.java
 multithreading:
 ----------------
 multithreading is the process to execute multiple threads at the same time without depending on other threads.
--> multithreading saves time 
+-> Multithreading saves time 
 suppose we have a program it is taking 20 mins to execute the code.
 -> If we use the concept of the thread 
 -> t1 thread will be executing half of the code
 -> t2 thread will be executing another half 
 threads execute simultaneously so both threads complete execution in 10 mins
 
+thread:
+-------
+-> thread is a pre-defined class that is available in "java.lang" package.
+-> thread is a basic unit of cpu and it is well known as independent execution.
+
+example:
+---------
+main(){
+withdraw();      -- t1
+deposit();        --t2
+checkBalance();  -- t3
+}
+
+-> We have three threads one thread is being assigned to one service, and whenever users come to access them
+   suppose a user1 came to access withdraw(), another user2 deposit(), and another user3 checkBalance(), here all users are able to access them without being blocked and reduce time.
+-> Without threads, it will be like when one user is accessing one service the others should wait because every service is being blocked.
+
+
 multitasking:
 --------------
-Take the example of a laptop in a laptop we are running many applications at a time like opening Chrome, playing songs in Spotify and coding in vs code and etcc...
-here we are making use of CPU better and also reducing the time
+Take the example of a laptop in a laptop we are running many applications at a time like opening Chrome, playing songs in Spotify, and coding in vs code and etc...
+here we are making use of the CPU better and also reducing the time
+
+creating a thread in Java:
+------------------------
+1. By extending the thread class.
+2. By implementing a runnable interface.
+
+1. By extending the thread class.
+----------------------------------
+import java.io.*;
+import java.util.*;
+public class GFG extends Thread {
+	public void run()
+	{
+	    try{
+	        System.out.println("Thread Started Running...");
+	        Thread.sleep(1000); // it will wait for 1 sec
+		    System.out.println("Thread Started Running...");
+	    }
+	    catch(Exception e){
+	    }
+	}
+	public static void main(String[] args)
+	{
+		GFG g1 = new GFG();
+		// Invoking Thread using start() method
+		g1.start();
+	}
+}
+
+2. By implementing a runnable interface.
+-----------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class GFG implements Runnable {
+	// method to start Thread
+	public void run()
+	{
+		System.out.println(
+			"Thread is Running Successfully");
+	}
+
+	public static void main(String[] args)
+	{
+		GFG g1 = new GFG();
+		//g1.start() // thread wont start this way like how we did in "extends way", this runnable class deos not have power to start that thread
+		// initializing Thread Object
+		Thread t1 = new Thread(g1);
+		t1.start();
+	}
+}
+
+Thread Scheduler:
+-----------------
+-> A component of Java that decides which thread to run or execute and which thread to wait is called a thread scheduler in Java. 
+
+thread is only chosen by a thread scheduler if it is in the runnable state. However, if there is more than one thread in the runnable state, 
+it is up to the thread scheduler to pick one of the threads and ignore the other ones. There are some criteria that decide which thread will execute first. 
+There are two factors for scheduling a thread i.e. Priority and Time of arrival.
+
+Priority: 
+------------
+The priority of each thread lies between 1 to 10. If a thread has a higher priority, it means that the thread has got a better chance of getting picked up by the thread scheduler.
+
+Time of Arrival:
+------------------
+Suppose two threads of the same priority enter the runnable state, then priority cannot be the factor to pick a thread from these two threads. In such a case,
+the arrival time of the thread is considered by the thread scheduler. A thread that arrived first gets the preference over the other threads.
+
+thread lifecycle:
+------------------
+we know that thread is well-known for independent execution. During the life cycle a thread can move from different states.
+
+1. new state       (born state)
+2. runnable state  (ready state)
+3. running state   (execution state)
+4. waiting state   (blocked state)
+5. dead state      (exit state)
+
 
 this keyword:
 -------------
