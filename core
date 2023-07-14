@@ -128,7 +128,23 @@ LinkedList, stack, vector, HashSet, tree etc.
 
 user-defined:
 -------------
+we make a package
+to compile the user-defined package class we use ---  "javac -d . className.java"
 
+multithreading:
+----------------
+multithreading is the process to execute multiple threads at the same time without depending on other threads.
+-> multithreading saves time 
+suppose we have a program it is taking 20 mins to execute the code.
+-> If we use the concept of the thread 
+-> t1 thread will be executing half of the code
+-> t2 thread will be executing another half 
+threads execute simultaneously so both threads complete execution in 10 mins
+
+multitasking:
+--------------
+Take the example of a laptop in a laptop we are running many applications at a time like opening Chrome, playing songs in Spotify and coding in vs code and etcc...
+here we are making use of CPU better and also reducing the time
 
 this keyword:
 -------------
