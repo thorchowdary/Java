@@ -242,6 +242,10 @@ we know that thread is well-known for independent execution. During the life cyc
 4. waiting state   (blocked state)
 5. dead state      (exit state)
 
+sleep method:
+--------------
+sleep is a static method of thread class which shoes checked exception i.e IntruptedException
+
 
 this keyword:
 -------------
