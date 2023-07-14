@@ -21,6 +21,13 @@ Java features:
 5. robust
 6. oops
 
+access modifiers:
+----------------
+1. private (only can access within the class, not outside the class, outside the package)
+2. public (Access from anywhere)
+3. protected (can access within a class, within the package, outside package by a subclass)
+4. default (can access within in class, within package)
+
 super keyword:
 ----------------
 super keyword refers to the objects of the superclass. it is used when we want to call the superclass variable, methods, and constructor through a subclass object.
@@ -85,8 +92,43 @@ class a{
     access modifier  
 ---> public static void main(String[] args)
                    return type
-this can be in any format not like the way above is , we can use it like as static public void main(String[] args).
+this can be in any format not like the way above is, we can use it like as static public void main(String[] args).
 ------------------------------------------------------------------
+
+Packages in Java:
+-------------------
+A Java package is a group of similar types of classes, interfaces, and sub-packages.
+example:
+--------
+the package is nothing but a folder in Windows.
+
+types of packages:
+------------------
+1. user-defined  (package add, package mypack etcc...)
+2. pre-defined -- (java.lang, java.util, java.sql etc..)
+
+advantages of packaging:
+------------------------
+1. re-usability
+2. security
+3. hiding (if we make a package1 of code and use that package1 in another code here we are hiding code which is in packag1)
+
+disadvantages:
+--------------
+we cannot pass parameters to the package.
+
+pre-defined
+-------------
+1. java.util -- this package is used to implement data structures in Java. it contains a utility class also called "collection framework".
+example:
+--------
+LinkedList, stack, vector, HashSet, tree etc.
+
+2. java.io-- io stands for input and output this package is used to perform input and output operations on file.
+
+user-defined:
+-------------
+
 
 this keyword:
 -------------
