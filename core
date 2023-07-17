@@ -357,6 +357,55 @@ yeild() method:
 ---------------
 A yield() method is a static method of the Thread class and it can stop the currently executing thread and will give a chance to other waiting threads of the same priority.
 
+isAlive() method:
+------------------
+isAlive() method is a pre-defined method of thread class through which we can verify whether a thread is alive or not.
+-> If a thread is alive it will return true else false.
+-> If we run the alive() method before starting the thread it will return false.
+
+thread priority:
+-----------------
+In Java, it is possible to set the priority of threads.
+-> To set these priorities java thread class provided two pre-defined methods.
+	->setpriority()
+	->getpriority()
+
+the thread class also provided three pre-defined final state variables and their value lie between 1 to 10.
+Thread.MIN_PRIORITY = 1
+Thread.NORM_PRIORITY = 5
+Thread.MAX_PRIORITY = 10
+
+-> If we won't set any priority to the threads JVM by default is set to NORMAL priority which is 5.
+
+example:
+----------
+public class priority extends Thread{
+    public void run(){
+        int priority =  Thread.currentThread().getPriority();
+        String name = Thread.currentThread().getName();
+        System.out.println(name+" "+ priority);
+    }
+    
+}
+class ketineni {
+    public static void main(String[] args){
+        priority t1 = new priority();
+        priority t2 = new priority();
+        priority t3 = new priority();
+        t1.setName("thread 1");
+        t2.setName("thread 2");
+        t3.setName("thread 3");
+
+        t1.setPriority(5);
+        t2.setPriority(10);
+        t3.setPriority(8);
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+
+
 
 this keyword:
 -------------
