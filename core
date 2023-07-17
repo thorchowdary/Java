@@ -242,9 +242,120 @@ we know that thread is well-known for independent execution. During the life cyc
 4. waiting state   (blocked state)
 5. dead state      (exit state)
 
-sleep method:
+sleep() method:
 --------------
-sleep is a static method of thread class which shoes checked exception i.e IntruptedException
+sleep is a static method of thread class which shoes checked exception i.e IntruptedException.
+the main purpose of the sleep method is to put a thread into a temporary waiting state.
+
+syntax:         ____(milli seconds)
+-------        |
+Thread.sleep(1000);
+or
+Thread t = new Thread();
+t.sleep(1000);
+
+join() method
+---------------
+-> The main purpose of join is to put a thread into a temporary waiting state.
+-> join method is used suppose we want to execute complete any particular thread among all the threads available in the thread pool.
+-> The join method also throws a checked exception i.e. interrupted exception.
+
+Example:
+--------
+class join extends Thread{
+    public void run(){
+    String name = Thread.currentThread().getName();
+    for(int i=0;i<3;i++){
+        System.out.println(name);
+    }
+    }
+}
+class b{
+    public static void main(String[] args){
+        join t1 =new join();
+        join t2 =new join();
+        join t3 =new join();
+
+        t1.setName("thread 1");
+        t2.setName("thread 2");
+        t3.setName("thread 3");
+
+        t2.start();
+        try {
+            t2.join(); // it will finishing executing thread 2 by putting t1 and t3 in temporary waiting state
+        } catch (Exception e) {
+            // TODO: handle the exception
+        }
+        t1.start();
+        t3.start();
+    }
+}
+
+suspend() method and resume method(); these are depricted after java 1.1 onwards
+------------------------------------
+-> The main purpose of suspend method it put the thread from a running state to a waiting state.
+-> Resume method is used to resume a suspended thread from the waiting state to the running state.
+example:
+--------
+public class suspend extends Thread {
+    public void run(){
+        String name = Thread.currentThread().getName();
+        for(int i=0;i<3;i++){
+            System.out.println(name);
+        }
+    }
+    
+}
+public class a{
+    public static void main(String[] args){
+        suspend t1 = new suspend();
+        suspend t2 = new suspend();
+        suspend t3 = new suspend();
+        t1.setName("thread 1");
+        t2.setName("thread 2");
+        t3.setName("thread 3");
+
+        t1.start();
+        t2.suspend();
+        t3.start();
+        t2.resume();
+    }
+}
+
+
+stop() method:
+--------------
+stop is a method of thread class that is used to terminate a thread permanently.
+
+example:
+---------
+public class stop extends Thread{
+    public void run(){
+        String name = Thread.currentThread().getName();
+        for(int i=0;i<3;i++){
+            System.out.println(name);
+        }
+    }
+    
+}
+public class tharunk{
+    public static void main(String[] args){
+    stop t1 = new stop();
+    stop t2 = new stop();
+    stop t3 = new stop();
+    t1.setName("thread 1");
+    t2.setName("thread 2");
+    t3.setName("thread 3");
+
+    t1.start();
+    t2.start();;
+    t3.start();
+    t2.stop();
+    }
+}
+yeild() method:
+---------------
+A yield() method is a static method of the Thread class and it can stop the currently executing thread and will give a chance to other waiting threads of the same priority.
 
 
 this keyword:
