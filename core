@@ -405,6 +405,16 @@ class ketineni {
     }
 }
 
+Problems with multithreading:
+---------------------------------
+Multithreading is very good whenever we want to complete our task as soon as possible, but in some situations, it may provide some wrong results or corrupted data
+this situation occurs whenever the same resource is accessible by multiple threads at the same time.
+
+Example:
+--------
+suppose there is a bus service, in that only one seat is available, if we use the threading concept, we have three threads, and the three  book the seat at a time which is wrong
+to overcome this we have a "synchronization" concept.
+
 
 
 this keyword:
