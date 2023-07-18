@@ -493,12 +493,106 @@ tharun seat is reserved
 Seats are reserved
 Seats are reserved
 
-Example:
---------
-suppose there is a bus service, in that only one seat is available, if we use the threading concept, we have three threads, and the three  book the seat at a time which is wrong
-to overcome this we have a "synchronization" concept.
+synchronization:
+-----------------
+synchronization is a technique through which we can control multiple threads or among the number of threads only one thread will enter inside the synchronized area.
+-> The main purpose of synchronization is to overcome the problem of multithreading when multiple threads are trying to access the same resource at the same time on that situation it 
+may provide some wrong information.
+
+synchronization is classified into two categories
+1. method level synchronization
+2. block level synchronization
+
+1. method level synchronization:
+---------------------------------
+-> The synchronization allows to access one thread at a time the rest will be in a waiting state.
+
+example:
+---------
+public class problem implements Runnable {
+     int avaiable =1, passenger;
+    problem(int passenger){ 
+            this.passenger = passenger;
+        }
+    public void run(){
+       
+       if(avaiable>=passenger){ 
+            String name = Thread.currentThread().getName();
+            System.out.println(name + " seat is reserved ");
+            avaiable = avaiable - passenger;
+       }
+       else{
+        System.out.println("Seats are reserved");
+       }
+    }
+}
+
+class ket{
+    public static void main(String[] args){
+        problem t = new problem(1);
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+        Thread t3 = new Thread(t);
+
+        t1.setName("tharun");
+        t2.setName("kumar");
+        t3.setName("Naidu");
+
+        t1.start();t2.start();t3.start(); 
+    }
+}
+
+output:
+-------
+tharun seat is reserved 
+Naidu seat is reserved     ---the available seat is only one but threads it allowed all 3 to book it
+kumar seat is reserved 
+
+with synchronized method:
+-------------------------
+public class problem implements Runnable {
+     int avaiable =1, passenger;
+    problem(int passenger){ 
+            this.passenger = passenger;
+        }
+    public synchronized void run(){
+       
+       if(avaiable>=passenger){ 
+            String name = Thread.currentThread().getName();
+            System.out.println(name + " seat is reserved ");
+            avaiable = avaiable - passenger;
+       }
+       else{
+        System.out.println("Seats are reserved");
+       }
+    }
+}
+
+class ket{
+    public static void main(String[] args){
+        problem t = new problem(1);
+        Thread t1 = new Thread(t);
+        Thread t2 = new Thread(t);
+        Thread t3 = new Thread(t);
+
+        t1.setName("tharun");
+        t2.setName("kumar");
+        t3.setName("Naidu");
+
+        t1.start();t2.start();t3.start();      
+    }
+}
+
+output:
+-------
+tharun seat is reserved 
+Seats are reserved
+Seats are reserved
 
 
+2. block level synchronization:
+----------------------------------
+in block-level synchronization 
 
 this keyword:
 -------------
