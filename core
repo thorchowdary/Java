@@ -409,6 +409,9 @@ Problems with multithreading:
 ---------------------------------
 Multithreading is very good whenever we want to complete our task as soon as possible, but in some situations, it may provide some wrong results or corrupted data
 this situation occurs whenever the same resource is accessible by multiple threads at the same time.
+-> The synchronization allows to access one thread at a time the rest will be in a waiting state.
+
+
 
 Example:
 --------
