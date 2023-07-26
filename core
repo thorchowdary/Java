@@ -613,3 +613,24 @@ storing and processing data efficiently.
 --> list (ArrayList, LinkedList, vector, stack)
 --> queue (priorityQueue, dequeue, arraydequeue)
 --> set (HashSet, linked HashSet, sorted set, treeset)
+
+
+diff between hashtables. hashmap, concurrent hashmap
+-----------------------------------------------------
+Hashtable:
+    It is one of the oldest implementations of the Map interface and was part of the initial Java release.
+    It is thread-safe, meaning multiple threads can safely access and modify it concurrently without external synchronization.
+    It does not allow null keys or values. Any attempt to store null will result in a NullPointerException.
+    It is synchronized, which means its methods are implicitly thread-safe. However, this synchronization comes with a performance cost.
+HashMap:
+    It is a non-synchronized implementation of the Map interface introduced in Java 1.2.
+    It allows null keys and null values, making it more flexible in certain scenarios.
+    It is not thread-safe, meaning concurrent access without proper synchronization can lead to data corruption or unexpected behavior.
+    Due to its lack of synchronization, it generally provides better performance compared to Hashtable in single-threaded environments.
+
+ConcurrentHashMap:
+    It was introduced in Java 1.5 to provide a thread-safe alternative to HashMap, suitable for high-concurrency scenarios.
+    It allows multiple threads to read and write concurrently without external synchronization, but with some restrictions.
+    Unlike Hashtable, it does not use a single lock for the entire data structure. Instead, it divides the data into segments, each having its own lock, enabling more fine-grained concurrency.
+    It allows null values but does not allow null keys, similar to HashMap.
+    It achieves better performance in highly concurrent scenarios compared to Hashtable since multiple threads can operate on different segments concurrently.
