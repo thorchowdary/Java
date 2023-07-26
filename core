@@ -596,3 +596,20 @@ in block-level synchronization
 
 this keyword:
 -------------
+
+collection framework:
+-----------------------
+Java collection is a set of predefined classes and interfaces that helps programmers to perform different kinds of data structure operations like sorting, searching, traversing, 
+storing and processing data efficiently.
+
+			Iterator
+  			   |
+  		           |
+			collection
+		-----------|------------
+		|          |		|
+	     list	queue 		set
+
+--> list (ArrayList, LinkedList, vector, stack)
+--> queue (priorityQueue, dequeue, arraydequeue)
+--> set (HashSet, linked HashSet, sorted set, treeset)
