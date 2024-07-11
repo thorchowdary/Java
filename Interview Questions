@@ -1,0 +1,133 @@
+collections in java what is the use of it
+logger in java 
+request filter
+hashmap vs linked hashmap
+factorial using recurrsion
+stream APi
+what is the app.properties file in the project
+how to create custom exception
+diff b/w procedure and function
+oops & it's features and uses
+diff b/w abstract & encapsulation
+diff overrifing and overloading
+arraylist vs linkedlist
+hashmap vs hash table
+power of a number coding question
+what is spring boot
+diff b/w @controller and @restcontroller
+monolithic vs microservices
+query to find highest salary
+how hashmap internally works
+string vs string buffer
+how to make class thread safe
+program to find the frequency of characters
+program to find the name in the list which starts with 'A' using Java 8
+how to make class threadsafe
+explain in brief about multithreading
+functional interface in java 8
+what is consumer, procedure
+what is the key component of a spring boot
+what is actuator
+what is mvc
+what are joins in sql
+dependency injection
+IOC container
+how to create object in spring boot
+how to authenticate API
+why java does not support multiple inheritence
+how to make collection thread safe
+diff b/w set and list in collection
+how to exclude variable in serilization
+diff b/w sleep and wait method i thread
+what is concurrent modification exception in collection
+priority of garbage thread
+reverse string coding question without affecting special character i/p : r#aa$pid o/p: d#ip$aar
+annotations in spring boot
+how to scan external package in spring boot
+diff b/w unique and primary key
+parenthesis coding question
+how to develop api in spring boot
+java 8 features
+how do we handle global exception in spring boot
+how can we delete particular column in database
+write code to print the duplicate count employee in the list
+is java 100% object oriented programming language
+use of abstraction
+function interface and diff b/w functional interface and interface
+what is lambda expression
+why are we saying strign buffer synchroized(thread safe)
+why string is mutable
+if i want to create one class mutable how can i do that
+I want to communicate one microservices with another micro service what is the approach
+diff b/w rest template and webclient
+diff b/w post and put
+tell me the flow how to register a new user in the database
+how the data is receiving in controller method(Request body, request param)
+Joins
+Idea about global exception in spring boot
+default server in spring boot, can we change the default server
+how to consume the values in app.properties in the project
+if i want to configure my database what steeps do i need to follow
+what is profile in springboot
+data types available in java
+features in java
+factorial of a number
+use of this keyword
+use of static keyword
+how many mehtods are available in object class and it's uses
+idea about inheritence
+how many ways can we create thread in java
+what is the cause of concurrant hashmap exception and how do we solve it
+code to create restendpoint(we need to pass id based on id we need to return the employee details)
+while creating the springboot application how to enable to accept json/xml request datatype
+what http methods are avaialable
+what is the @service and @component annoantion when do we use it
+hashmap vs linked hashmap
+what is the purpose of final keyword
+what are the access modifiers in java
+what is the use of super keyword
+@Autowired annotation in spring boot
+diff b/w spring and springboot
+what is the importance od @request mapping in springboot
+what is the use of spring boot starter
+what is the role of transactional annotation in springboot
+spring boot actuator
+mergesort
+encapsulation in java
+polymorphsim, overriding, overloading
+diff bewtween delete and truncate
+diff b/w filter and map
+what is the use of lambda expression how do we use in our code
+what is the use of concurrent hashmap
+singleton class and how do we create it
+crud operations
+idea about JPA, JDBC template
+evennumber in array
+linked list
+middle ele in linked list
+sort the linked list
+interface in java
+abstract class
+trapping rain water problem 
+the celebrety coding problem
+can we override the private and static methods
+what is the use of static keyword and method
+how do we handle exception in java
+AOP in springboot
+if we want to implement spring security in the project how will we do that
+@path variable
+interface and abstaract class when do we use them
+how do you decide when to use arraylist and linked list
+string builder and what is the diff b/w string
+primary key vs unique key
+reflection api in java
+diff b/w synchronized and asyncrhronized
+serilization vs de-serilization
+how to handle multiple exceptions
+sprring boot cli
+spring boot autoconfiguration
+== vs = operator
+genrics
+what is the use of transient keywoed
+comparable vs comparator
+garbage collection
