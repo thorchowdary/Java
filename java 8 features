@@ -1,10 +1,24 @@
+Java 8 features:
+----------------------------
+1. lambda expressions
+2. functional interface
+3. default methods
+4. predefined functional interface
+  a. predicate
+  b. function
+  C. supplier
+  d. consumer
+5. constructor and method reference
+6. stream API
+7. Date & Time API
+
 stream Api:
 ------------
-It is a default method in collection interface
+It is a default method in the collection interface
 If we want to process objects from the collection we use stream
 java.util.stream package
-the purpose of a stream is to reduce the length of code
-stream is not only for particular collections it can be applicable for group of values for example we can use stream.of(arrays)
+the purpose of a stream is to reduce the length of the code
+stream is not only for particular collections it can apply to a group of values for example we can use stream.of(arrays)
 
 we have 
 stream()
@@ -109,12 +123,139 @@ using forEach()
 ---------------------
 array.stream().forEach(system.out::println)
 
-to get double if each ele in array
+to get double if each ele in the array
 ----------------------------------
 array.stream().forEach(i->{system.out.println("Double of +i+"is:"+(i*i);}
 
 toArray():
 ----------
-to convert stream of ele into array
+to convert the stream of ele into an array
 
 Integer[] i = l.stream().toArray(Integer[]::new);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+lambda expression:
+------------------
+the purpose of a lambda expression is to enable functional programming in the Java language
+functional programming means passing a function as an argument, assigning a function to a variable
+a = f()
+
+lambda expression is just an "anonymous function/name less function" The function that does not have the name, return type, or modifiers is called a lambda expression
+another name for lambda expression is "closures"
+
+normal function:
+----------------
+
+public void m1(){
+  sysout("hello")
+}
+
+converting function to lambda function:
+---------------------------------------
+()->{ 
+  system.out.println("hello") 
+}
+
+with the help of lambda expression, we write fewer lines of code
+
+public void add(int a, int b){
+ system.out.println(a+b);
+}
+
+lambda expression:
+------------------
+(a, b) -> {
+ system.out.print(a+b);
+}
+
+here if we observe we are not passing datatypes, sometimes the compiler even detects the datatype so we can remove it will see further how compiler detects in functional interface
+
+to get a square of ele:
+(n)->(n*n)
+
+how to call/invoke lambda expression:
+------------------------------------------
+Wherever "functional interfaces" are there we can use a lambda expression, but we cannot use it in another area
+
+the interface does not have any methods is called a "marker interface"
+examples:
+--------
+serilizables, randomAcess, singlethread model
+
+functional interface:(SAM -> Single Abstract Method)
+---------------------
+interface that has only one abstract method is called a functional interface
+examples:
+---------
+runnable()->has only one run() method
+callable() -> has onyl one call() method
+
+from java 1.8 onwards we can have default and static methods in the interface, for functional interface the only restrictions are for abstract methods not for default and static methods
+
+we can use @functional interface er are telling explicitly the interface is a functional interface 
+
+@functional interface
+interface a {
+ public void m1(){}
+ public void m2(){}
+}
+if we compile this code will get an error saying that only one abstract class is allowed since we passed 2 methods too if we don't annotate we will not get any error, since 
+we gave annotation it will get an error.
+
+by default, the interface having one abstract method is a functional interface
+interface a {
+ public void m1(){}
+}
+
+the link between functional interface and lambda expression
+-----------------------------------------------------------
+without lambda expression:
+--------------------------
+Interface interf{
+ public void m1()
+}
+
+class demo implements interf{
+ public void m1(){
+  sysout("hello")
+ }
+}
+
+class test{
+public static void main(String[] args){
+  interf a = new demo();
+  a.m1();
+}
+
+implementing a functional interface with lambda expression
+
+Interface interf{
+ public void m1()
+}
+
+class test{
+public static void main(string[] args){
+ Interf a = ()->system.out.println("hello");
+ a.m1();
+}
+
+example 2:
+----------
+Interface interf{
+ public void add(int a, int b); <--------|
+}                                        |
+                                         |
+class test{                              |
+public static void main(string[] args){  |    //here the discussion that the compiler will detect the data types of parameter 
+ interf a = (a,b)->(a+b);  -------------->    //Since the function interface has only 1 method it has arguments that we are referring to in the lambda expression
+ a.add(1,2);                                 // so compiler will detect the data type
+}
+
+
+
+
+
+
+
+
+
