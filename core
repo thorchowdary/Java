@@ -681,3 +681,232 @@ Size:
 Methods:
     Array: Arrays provide basic functionality like element access by index, length, and array copying. They do not have built-in methods for adding or removing elements, as the size is fixed.
     ArrayList: ArrayLists provide a wide range of methods to manipulate the collection, such as add(), remove(), get(), size(), clear(), and more. These methods make it easier to work with collections compared to arrays.
+
+
+purpose of collection:
+--------------------------
+suppose we have to create 2 variables we can simply create like 
+int a, int b
+if we want to create 10 variables even it is possible.
+
+what if we want to create 1000 variables still we can create but it will be the worst way to write code because of no readability
+to over the problem we have "ARRAYS"
+
+student[] s = new student[1000];
+
+but here we have one problem since we created a student object it will allow only student objects it will not allow other objects like 
+customer object
+s[0] = new student[];
+s[1] = new customer[]; --> it will not accept this object since it is incompatible
+
+ARRAYS itself has the solution to solve this problem by creating objects using the object keyword
+
+object[] o = new object[1000]
+o[0] = new student[];
+o[1] = new customer[];
+
+limitations of arrays:
+------------------------
+1. Arrays are fixed in size - once we initialize size we cannot increase/decrease at run time.
+   suppose take an example we are conducting one event where we thought many students would come so we arranged 100 seats
+   and when the program started which is at run time we got only 10 students the rest size is a waste and vice versa
+   so the code is not efficient
+2. Arrays accepts only homogeneous data
+3. Arrays concept is not implemented based on any data structure so will not have any ready-made methods available.
+
+to overcome this problem we need to go with the COLLECTIONS concept
+
+COLLECTIONS:
+------------
+1. collections are not fixed in size
+2. collections can hold both homogeneous and heterogenous
+3. every collection class is implemented based on some data structure so we can expect ready-made code.
+
+
+which is one best ARRAYS or COLLECTIONS>
+---------------------------------------------
+if we know the size in advance the highly recommended array concept is since in the collection the size is not fixed it has 
+growable nature due to that the performance is low.
+
+example:
+--------
+suppose we have an array of 3-size
+array[] a = [0,1,2]
+if we want to add an extra element to an array will get the array index out of bound exceptions
+
+using ArrayList:
+ArrayList a = [0,1,2]
+if we want to add one more element as we think it won't create one cell at the end
+
+it will not copy all the data into a bigger size ArrayList by creating one.
+
+[0][1][2]
+
+to add one more ele into ArrayList
+
+it will copy all the data into new ArrayList by creating a bigger size array list
+
+[0][1][2][3][][]
+
+the old ArrayList will go into garbage collection
+
+collection class are less performance due to this
+
+ARRAYS VS COLLECTIONS:
+-----------------------
+ARRAYS:
+--------
+1. fixed in size
+2. w.r.t memory arrays are not recommended
+3. performance wise arrays are recommended
+4. arrays can hold only homogeneous data
+5. no underlying data structure so no ready-made methods available
+
+COLLECTION:
+----------
+1. growable in size
+2. w.r.t memory collections are recommended
+3. w.r.t performance collections are not recommended
+4. arrays can hold only heterogeneous data
+5. underlying data structure exists so ready-made methods available
+
+*these diff will be applicable to all the collection classes
+
+diff b/w collections vs collection framework:
+----------------------------------------------
+collections:
+a group of individual objects as a single entity.
+
+collection framework:
+---------------------
+it defines several classes and interfaces which can be used to represent a group of objects as a single entity
+
+diff b/w collection vs collections:
+-----------------------------------
+* the collection: is an interface
+
+collections: 
+* it is a class
+* This class defines multiple utility methods for collection objects like sorting, and searching
+* java. util package
+
+example:
+--------
+* to sort elements in the array list we go with 
+* ArrayList a = new ArrayList();
+* collections.sort(a)
+
+* We have multiple child interfaces of collection Interface
+
+List interface:
+----------------
+				COLLECTION(Interface)
+					|
+					|
+				      list(child Interface)
+					|
+        		ArrayList     LinkedList    Vector   Stack
+
+* if want to represent a group of individual objects as a single entity where duplicates are allowed & insertion order is preserved
+then we go with a list
+
+set interface:
+--------------
+child interface of collections
+ 				implemented class of set
+					|
+			     hashset        linkedhashset
+
+if we want to represent a group of individual objects as a single entity where duplicates are not allowed and insertion order is
+not preserved then we should go with the set
+
+list vs set:
+------------
+list:
+* duplicates are not allowed
+* insertion order is preserved
+
+set:
+----
+* duplicates are allowed
+^ insertion order is not preserved
+
+sorted set interface:
+--------------------
+it is a child interface of the set if we want to represent a group of individual objects as a single entity where duplicates
+are not allowed but all objects should inserted according to some sorting order then we go with a sorted set.
+
+queue interface:
+----------------
+* first in first out
+
+queue
+| -> priority queue
+| -> blocking queue |-> linked blocking queue
+                    |-> priority blocking queue
+
+all the interfaces (collection, list, set, sorted set, queue) are meant for processing a group of individual objects.
+
+** If we want to represent a group of objects as key-value pairs then we should go with MAP interface.
+
+map interface:
+--------------
+* map is not a child interface of the collection
+
+implemented class of map:
+|-> hash map
+|-> linked hash mop
+
+if we want to represent a group of individual objects as key-value pairs then we go with the map
+
+* both key & values are objects
+duplicate keys are not allowed but duplicate values are allowed.
+
+sortedmap():
+------------
+* it is a child interface of the map
+* if we want to represent a group of key-value pairs according to some sorting order of keys then we go with sortedMap.
+
+collection interface has some methods that implement collection interface:
+----------------------------------------------------------------------------
+add(object o)
+addAll(collection c)
+remove(object o)
+removeAll(collection c)
+to remove all except bunch of collection we use retainAll(collection c)
+isempty()
+contains(object o)
+containsAll(collection C)
+to convert to array we use .toArray()
+to iterate objects in collection we use
+Iterator I = c.Iterator()
+
+how to get a synchronized version of ArrayList:
+----------------------------------------------
+ArrayList a = new ArrayList();
+
+list l = Collections.synchronizedList(a);
+
+by default, ArrayList is non synchronized but we can get it synchronized version of ArrayList by using the collections class
+"SynchronizedList()"  method
+
+for set and map:
+------------------
+set s =  Collections.synchronizedset(a)
+Collections.synchronizedmap(a)
+
+** If we want to add/delete ele in the middle of the list then the linked list is the best choice over the array because in LinkedList after
+deleting/adding shifting of elements just link referring changes does not happen where in the array it does happen.
+
+**To retrieve ele linked list is not a good choice because the search starts from the 1st ele then it traverses all the ele
+
+linked list has the following methods:
+-----------------------------------
+addFirst()
+addlast()
+getFirst()
+getLast()
+removeFirst()
+removeLast()
+
+
